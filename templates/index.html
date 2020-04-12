@@ -1,0 +1,529 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home | Apostolic Faith Church</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'images/logo03.png' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider_style.css' %}">
+    <!--
+    <style>
+        @media (max-width: 991.98px) {
+            .slide {
+                display: none;
+            }
+        }
+    </style>
+    -->
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <!--<i class="flaticon-cross"></i> --><img style="height: 40px;" src="{% static 'images/logo03.png' %}" alt="AFM logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Media
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(255, 255, 255); ">
+                        <a class="dropdown-item" href="video">Video</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="audio">Audio</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="live_forcast">Live ForCast</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Library
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(255, 255, 255);">
+                        <a class="dropdown-item" href="sunday_school">Sunday School</a>
+                            <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="blog">Recent Blog</a>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a href="account/logout" class="nav-link">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a href="account/register" class="nav-link">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- END nav -->
+
+    <!--Page Jump-->
+    <div class="slide">
+    <a name = 'home'></a>
+    <section class="home-slider owl-carousel ">
+        {% for displaySlider in displaySliders %}
+
+        <div class="slider-item" style="background-image:url({{displaySlider.displayImage.url}});">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center justify-content-center"
+                    data-scrollax-parent="true">
+                    <div class="col-md-8 text-center ftco-animate">
+                        
+                        <h1 class="mb-4">
+                            {% if displaySlider.discriptionTop %}
+                            {{displaySlider.discriptionTop}}
+                            {% endif %}
+                            {% if displaySlider.discriptionBottom %}
+                            <span>{{displaySlider.discriptionBottom}}</span>
+                            {% endif %}
+                        </h1>
+                        <p><a href="about" class="btn btn-secondary px-4 py-3 mt-3">About Us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </section>
+    </div>
+    <!--Countdown-->
+    {% if setCountdownDates.Active %}
+    <section class="ftco-bible-study">
+        <div class="container-wrap">
+            <div class="col-md-12 wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 d-md-flex">
+                            <div class="one-forth ftco-animate">
+                                <h3>{{setCountdownDates.eventTitle}}</h3>
+                                <p>{{setCountdownDates.eventDiscription}}</p>
+                            </div>
+                            <div class="one-half d-md-flex align-items-md-center ftco-animate">
+                                <div class="countdown-wrap">
+                                    <p class="countdown d-flex" id="countDown">
+                                        <span id="days"></span>
+                                        <span id="hours"></span>
+                                        <span id="minutes"></span>
+                                        <span id="seconds"></span>
+                                    </p>
+                                </div>
+
+                                <!--Page Jump-->
+                                <a name="about-us"></a>
+                                
+                                <div class="button">
+                                    <p><a href="event" class="btn btn-primary p-3">View Events Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--New About US-->
+    
+        <!--setCountdownDateAndTime-->
+        <p id="setCountdownDateAndTime" style="display:none;">{{setCountdownDates.eventDate}}</p>
+        <!--stopCountdownMessage-->
+        <p id="stopCountdownMessage" style="display:none;">{{setCountdownDates.endTimeMessage}}</p>
+        {% endif %}
+        
+<div class="container">
+    <div class="row justify-content-center mb-5 pb-2">
+        <div class="col-md-6 text-center heading-section ftco-animate">
+            <br><br>
+            <a name="about-us">
+            <span class="subheading">Welcome to</span>
+            <h2 class="mb-4">Apostolic Faith Church</h2>
+            <br>
+        </div>
+    </div>
+</div>
+    <section class="ftco-section-2">
+        <div class="container-fluid">
+
+            <div class="section-2-blocks-wrapper d-flex row no-gutters">
+                <div class="img col-md-6 ftco-animate" style="background-image: url({% static 'images/about.jpeg' %});">
+                    <!--
+            <a href="https://vimeo.com/45830194" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
+            -->
+                </div>
+                <div class="text col-md-6 ftco-animate">
+                    <div class="text-inner align-self-start">
+
+                        <p>We are a traditional, Bible-believing church, committed to upholding the Gospel of Jesus Christ. 
+                            Our services are time to worship God through music, be encouraged by testimonies of God working in lives today,
+                        and hear practical, relevant, Bible-based sermons. </p>
+
+                        <p>We hope you can visit us at one of hundreds of locations
+                        around the world .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if urgentMessage.Active %}
+<div class="container">
+   <section>
+       <div class="card alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="card-header alert-light ">
+            {{urgentMessage.messageTitle | safe}}
+        </div>
+            <div class="testimony-wrap p-4 pb-5" >
+                
+                <div class="user-img mb-4" style="background-image: url({{urgentMessage.userImage.url}}); float:left;"></div>
+                <div class="meta mb-3" style="padding-left: 120px; color:gray">
+                    <div><span class="icon-calendar"></span><span style="padding-left: 5px;">{{urgentMessage.date | date}}</span></div>
+                    <div><span href="#">{{urgentMessage.UserTitle}}</span></div>
+                    
+                </div>
+                    
+            
+            <div>
+                
+                <p style="color:rgb(27, 26, 26);">{{urgentMessage.messageBody | safe}}</p>
+            </div>
+            </div>
+               
+       
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+   </section>
+</div>
+   {% endif %}
+    <section>
+        <div class="container-md">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-6 text-center heading-section">
+
+                    
+
+                    <br>
+                    <span class="subheading">Learning at the feet of Jesus</span>
+                    <h2 class="mb-4">Sunday School</h2>
+                    <p>Every Sunday to Learn at the feet of Christ has
+                        always been a great expirence and i believe if you join us
+                        next week sunday you'll have the same Testimony and even greater.
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-deck">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Elementary Lesson
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title memory-verse-text">{{element.Topic}}</h3>
+                        <h5 class=" card-title memory-verse-text">{{element.bibleText}}</h5>
+                        <p class="card-text" style="color:rgb(27, 26, 26);">{{element.memoryVerse}}</p>
+                        <a href="/sunday_school/lesson/english/intermediate/{{element.id}}" class="btn btn-primary">Read Lesson</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Intermidiate Lesson
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title memory-verse-text">{{inter.Topic}}</h3>
+                        <h5 class=" card-title memory-verse-text">{{inter.bibleText}}</h5>
+                        <p class="card-text" style="color:rgb(27, 26, 26);">{{inter.memoryVerse}}</p>
+                        <a href="/sunday_school/lesson/english/elementary/{{inter.id}}" class="btn btn-primary">Read Lesson</a>
+                    </div>
+                </div>
+
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Adult Lesson
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title memory-verse-text">{{adult.Topic}}</h4>
+                        <h5 class=" card-title memory-verse-text">{{adult.bibleText}}</h5>
+                        <p class="card-text" style="color:rgb(27, 26, 26);">{{adult.memoryVerse}}
+                        </p>
+                        <a href="/sunday_school/lesson/english/adult/{{adult.id}}" class="btn btn btn-primary">Read Lesson</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br><br>
+
+    <section>
+        <br><br>
+        <div class="container">
+            <div class="row no-gutters justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section">
+                    <span class="subheading">Sermons</span>
+                    <h2 class="mb-4">Watch our sermons</h2>
+                    <p>Do not miss out! for sermon and other program videos do well to check this section</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for sermon in sermonUpdates %}
+                <div class="col-md-4 ftco-animate">
+                    <div class="sermons">
+                        <a href="{{sermon.link}}"
+                            class="img popup-vimeo mb-3 d-flex justify-content-center align-items-center"
+                            style="background-image: url({{sermon.image.url}});">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <span class="icon-play"></span>
+                            </div>
+                        </a>
+                        <div class="text">
+                            <h3><a href="{{sermon.link}}">{{sermon.sermonTitle}}</a></h3>
+                            <span class="position">{{sermon.precherName}}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <p><a href="{% url 'video' %}" class="btn btn-primary btn-outline-primary p-3">Watch all sermons</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <span class="subheading">Read, Get Inspired, and Share Your Story</span>
+                    <h2 class="mb-4">Testimonies</h2>
+                    <p>Our God has never changed for He still is the same even in our generation. The Grace and Blood of Jesus still Avails! </p>
+                </div>
+            </div>
+            <div class="row ftco-animate">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel ftco-owl">
+                        {% for testimony in testimonies %}
+                        
+                        <div class="item text-center">
+                            <div class="testimony-wrap p-4 pb-5">
+                                <div class="user-img mb-4" style="background-image: url({{testimony.userPicture.url}})">
+                                    <span class="quote d-flex align-items-center justify-content-center">
+                                        <i class="icon-quote-left"></i>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p class="mb-5"><a href="about/testimony/{{testimony.id}}">{{testimony.caption}}</a></p>
+                                    <p class="name">{{testimony.username}}</p>
+                                    <span class="position">{{testimony.UserDuty}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <span class="subheading">Blog</span>
+                    <h2>Recent Post</h2>
+                    <p>Try to check this section frequently as we bring to you diffrent Blog post on Event, Forum and sermons(text), Even Inspiring Testimonies</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for post in blogs %}
+                <div class="col-md-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="blog/detailed/{{post.id}}" class="block-20"
+                            style="background-image: url({{post.featuredImage.url}});">
+                        </a>
+                        <div class="text p-4 d-block">
+                            <div class="meta mb-3">
+                                <div><a style="cursor: pointer;">{{post.time}}</a></div>
+                                <div><a style="cursor: pointer;">{{post.username}}</a></div>
+                                <div><a style="cursor: pointer;" class="meta-chat"><span class="icon-chat"></span>{{post.get_comments.count}}</a></div>
+                            </div>
+                            <h3 class="heading"><a href="blog/detailed/{{post.id}}">{{post.blogTitle}}</a></h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-light">
+
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="logo">
+                            <img src="{% static 'images/logo03.png' %}"
+                            alt="logo" style="width: 40px; height: 30px; float: left;"> <span>Apostolic Faith</span>
+                            <span>Church</span>
+                        </h2>
+                        <p>Earnestly contend For The Faith.</p>
+                    </div>
+
+                    <!--NewsPapper Subscripion-->
+                    <div class="row d-flex justify-content-center mt-12">
+                        <div class="col-md-12">
+                            <p>Subcribe For Our Latest Magazine and News</p>
+                            <form action="." class="subscribe-form" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <button type="submit" style="display: contents;"><span class="icon icon-paper-plane"></span></button>
+                                    <input type="text" class="form-control" placeholder="Enter email address" name="sub" required>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
+                            <li><a href="{% url 'event' %}" class="py-2 d-block">Latest Event</a></li>
+                            <li><a href="{% url 'video' %}" class="py-2 d-block">Sermons</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Contact Information</h2>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">No. 1 Campground Road, 
+                                    Anthony Lagos, Nigeria</span></li>
+                                <li><a href="tel://+2348033800179"><span class="icon icon-phone"></span><span class="text">+234 803 380 0179</span></a></li>
+                                <li><a href="mailto:afm@apostolicfaithweca.org"><span class="icon icon-envelope"></span><span
+                                            class="text">afm@apostolicfaithweca.org</span></a></li>
+                                <li>
+                                    <span class="icon icon-clock-o"></span>
+                                    <span class="text">Sunday -- 9:00am</span>
+                                </li>
+                                <li>
+                                    <span class="icon icon-clock-o"></span>
+                                    <span class="text">Bible Study -- Wednesday 6:00pm</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                            <li class="ftco-animate"><a href="https://twitter.com/afcweca?s=09"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="https://m.facebook.com/pages/category/Concert-Tour/Apostolic-faith-weca-1754916198064167"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.instagram.com/p/B0ahDUOIs18/?igshid=139pssuipznnc&hI=en"><span class="icon-instagram"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.youtube.com/results?search_query=apostolic+faith"><span class="icon-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed with 
+                        <i class="icon-heart" aria-hidden="true" style="color: red;"></i> by 
+                        <a href="https://getitblogg.wordpress.com" target="_blank"> <strong>eTecknologies</strong></a> | Template by 
+                        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+            
+        </svg>
+    </div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/slider_main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

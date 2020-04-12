@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About | Apostolic Faith Campus Fellowship</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'images/logo03.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-deepblue" style="color: white;">
+          <a class="navbar-brand" href="#"><img src="{% static 'images/logo03.png' %}" alt="logo"
+              style="width: 50px; height: 40px; margin-right:8px; font-size:small;"></a>
+        
+          <!--Nav bar Icon-->
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'images/partner-4.png' %}" width="30" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link" style="color: white;">Home</a></li>
+              <li class="nav-item"><a href="" class="nav-link" style="color: white;">About</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: white;" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Media
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(255, 255, 255); ">
+                  <a class="dropdown-item" href="{% url 'video' %}">Video</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'audio' %}">Audio</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'live_forcast' %}">Live ForCast</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  style="color: white;" aria-haspopup="true" aria-expanded="false">
+                  Library
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(255, 255, 255);">
+                  <a class="dropdown-item" href="{% url 'sunday_school' %}">Sunday School</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'blog' %}">Recent Blog</a>
+                </div>
+              </li>
+        
+              <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link" style="color: white;">Contact</a></li>
+        
+        
+            </ul>
+          </div>
+        </div>
+          
+        </nav>
+        <!-- END nav -->
+        <div class="container">
+          <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-6 text-center heading-section ftco-animate">
+              <br><br>
+              <span class="subheading">Welcome to</span>
+              <h2 class="mb-4">Apostolic Faith Church Iba</h2>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-10 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }"
+          style="margin:auto;">
+          <p class="breadcrumbs mb-2" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a
+                href="{% url 'index' %}" style="color: rgb(108, 142, 172);">Home</a></span> <span class="mr-2"></span> <span>About Us</span>
+          </p>
+        </div>
+<br>
+		<section class="ftco-section-2">
+      <div class="container-fluid">
+        <div class="section-2-blocks-wrapper d-flex row no-gutters">
+          <div class="img col-md-6 ftco-animate" style="background-image: url({% static 'images/about.jpeg' %});">
+          </div>
+          <div class="text col-md-6 ftco-animate">
+            <div class="text-inner align-self-start">
+            
+              <p>We are a traditional, Bible-believing church, committed to upholding the Gospel of Jesus Christ.
+                Our services are time to worship God through music, be encouraged by testimonies of God working in lives today,
+                and hear practical, relevant, Bible-based sermons. </p>
+              
+              <p>We hope you can visit us at one of hundreds of locations
+                around the world .</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Read, Get Inspired, and Share Your Story</span>
+            <h2 class="mb-4">Testimonies</h2>
+            <p>Get Inspired by Peoples Testimonies, this are proves that Our God still Answers Prayer, He is Our present help in Ages Past, And He remains the same Forever!</p>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              {% for testimony in testimonies %}
+              <div class="item text-center">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-4" style="background-image: url({{testimony.userPicture.url}})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5"><a style="color: rgb(128, 128, 211);" href="testimony/{{testimony.id}}">{{testimony.caption}}</a></p>
+                    <p class="name">{{testimony.username}}</p>
+                    <span class="position">{{testimony.UserDuty}}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="ftco-section ftco-counter" id="section-counter">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2>Church Service Location</h2>
+            <p>So far the lord has helped us, please find on of our location to worship with us</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="202">0</strong><strong>+</strong>
+                <span>Bible Study Center</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="500">0</strong><strong>+</strong>
+                <span>Church around the world</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="5000">0</strong><strong>+</strong>
+                <span>Choristers around the World</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section-3 bg-light">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 py-5 nav-link-wrap aside-stretch">
+            <div class="nav ftco-animate flex-column nav-pills text-md-right" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active pr-5" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="true">Mission</a>
+
+              <a class="nav-link pr-5" id="v-pills-vission-tab" data-toggle="pill" href="#v-pills-vission" role="tab" aria-controls="v-pills-vission" aria-selected="false">Motto</a>
+            </div>
+          </div>
+          <div class="col-md-8 pt-5 pb-5 pl-md-5 d-flex align-items-center">
+            
+            <div class="tab-content ftco-animate pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                <span class="icon mb-3 d-block flaticon-bed"></span>
+                <h2 class="mb-4">Apostolic Faith Church</h2>
+              	<p class="lead">"The mission of the ApostolicFaith Church is to spread the Gospel of Jesus Christ worldwide.
+                Weac complish this as we:"
+
+                <p><b style="font-weight: bold;">Pray- </b>
+                  We make prayer the basis of every ministry and encourage communion with God as the 
+                way we grow to spiritual maturity in Him .</p>
+                <p><b style="font-weight: bold;">Preach- </b>
+                  We emphasize the original Pentecostal doctrine of salvation, sanctification, and the 
+                baptism of the Holy spirit, continually striving to develop fully committed disciples of Jesus 
+                Christ.</p>
+                <p><b style="font-weight: bold;">Publish- </b>
+                  We publish the Gospel through the printed word,the spoken word, and throughour 
+                personal lives, daily looking for opportunities to spread themessage, 
+                "Ye must be born again" .</p>
+                </div>
+
+              <div class="tab-pane fade" id="v-pills-vission" role="tabpanel" aria-labelledby="v-pills-vission-tab">
+                <span class="icon mb-3 d-block flaticon-tray"></span>
+                <h2 class="mb-4">Apostolic Faith Church</h2>
+                <p class="lead">"Our motto is the Biblical mandate that has faced believers since the dawn of the church 
+                <b style="font-weight: bold;">"Earnestly contend for the faith which was once delivered unto the saints" (Jude3).</b> The word
+                contend means <b style="font-weight: bold;">"to strive for."</b> When we expand that definition to include the word earnestly, 
+                we realize that God challenges us to unreservedly expand our time, energy, and resources to
+                promote His cause." </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2>Our Miniters</h2>
+            
+          </div>
+        </div>
+    		<div class="row">
+    			<div class="col-md-4 ftco-animate">
+            <div class="block-10 d-md-flex align-items-center">
+            	<div class="img" style="background-image: url({{firstMinister.picture.url}})"></div>
+              <div class="person-info pl-md-3">
+                <span class="name">{{firstMinister.ministerName}}</span>
+                <span class="position">{{firstMinister.position}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="block-10 d-md-flex align-items-center">
+            	<div class="img" style="background-image: url({{secondMinister.picture.url}})"></div>
+              <div class="person-info pl-md-3">
+                <span class="name">{{secondMinister.ministerName}}</span>
+                <span class="position">{{secondMinister.position}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="block-10 d-md-flex align-items-center">
+            	<div class="img" style="background-image: url({{thirdMinister.picture.url}})"></div>
+              <div class="person-info pl-md-3">
+                <span class="name">{{thirdMinister.ministerName}}</span>
+                <span class="position">{{thirdMinister.position}}</span>
+              </div>
+            </div>
+          </div>
+    		</div>
+    	</div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-light">
+    
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="logo">
+                <img src="{% static 'images/logo03.png' %}" alt="logo" style="width: 40px; height: 30px; float: left;">
+                <span>Apostolic Faith</span>
+                <span>Church</span>
+              </h2>
+              <p>Earnestly contend For The Faith.</p>
+            </div>
+    
+            <!--NewsPapper Subscripion-->
+            <div class="row d-flex justify-content-center mt-12">
+              <div class="col-md-12">
+                <p>Subcribe For Our Latest Magazine and News</p>
+                <form action="." class="subscribe-form" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <button type="submit" style="display: contents;"><span class="icon icon-paper-plane"></span></button>
+                    <input type="text" class="form-control" placeholder="Enter email address" name="sub" required>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
+                <li><a href="{% url 'event' %}" class="py-2 d-block">Latest Event</a></li>
+                <li><a href="{% url 'video' %}" class="py-2 d-block">Sermons</a></li>
+              </ul>
+            </div>
+          </div>
+    
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Contact Information</h2>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">No. 1 Campground Road,
+                      Anthony Lagos, Nigeria</span></li>
+                  <li><a href="tel://+2348033800179"><span class="icon icon-phone"></span><span class="text">+234 803 380
+                        0179</span></a></li>
+                  <li><a href="mailto:afm@apostolicfaithweca.org"><span class="icon icon-envelope"></span><span
+                        class="text">afm@apostolicfaithweca.org</span></a></li>
+                  <li>
+                    <span class="icon icon-clock-o"></span>
+                    <span class="text">Sunday -- 9:00am</span>
+                  </li>
+                  <li>
+                    <span class="icon icon-clock-o"></span>
+                    <span class="text">Bible Study -- Wednesday 6:00pm</span>
+                  </li>
+    
+                </ul>
+              </div>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                <li class="ftco-animate"><a href="https://twitter.com/afcweca?s=09"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate"><a
+                    href="https://m.facebook.com/pages/category/Concert-Tour/Apostolic-faith-weca-1754916198064167"><span
+                      class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/p/B0ahDUOIs18/?igshid=139pssuipznnc&hI=en"><span
+                      class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.youtube.com/results?search_query=apostolic+faith"><span
+                      class="icon-youtube"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+    
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed with
+              <i class="icon-heart" aria-hidden="true" style="color: red;"></i> by
+              <a href="https://getitblogg.wordpress.com" target="_blank"> <strong>eTecknologies</strong></a> | Template by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>

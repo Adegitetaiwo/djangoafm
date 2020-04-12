@@ -1,0 +1,1 @@
+web: gunicorn afm.wsgi --log-file - 
